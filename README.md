@@ -1,5 +1,5 @@
 # VTLM
-VTLM (Visaul Translation Language Modeling) is Basically, the translation language modeling (TLM) structure that concatenates vision features to form embeddings.
+VTLM (Visual Translation Language Modeling) is basically, the translation language modeling (TLM) structure that concatenates vision features to form embeddings.
 It extends the translation language modeling with masked region classification, and pre-train with three-way parallel vision & language corpora.
 Then, lastly fine-tuning for multimodal machine translation.
 
