@@ -6,7 +6,6 @@ Then, lastly fine-tuning for multimodal machine translation.
 ### Checkpoints
 [here!](https://zenodo.org/record/4646961/files/vtlm_eacl21_checkpoints.tar.bz2)
 
-![Screen Shot 2023-02-02 at 13.40.44.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/13681f18-db5f-4729-a0aa-5159a1a74407/Screen_Shot_2023-02-02_at_13.40.44.png)
 
 ### Requirements
 - Python3
@@ -32,3 +31,33 @@ Then, lastly fine-tuning for multimodal machine translation.
   ```
 2. Pre-processing the corpora (code path: `data/`)
 tokenize + BPE-ize
+
+3. Pre-training the TLM/VTLM
+- TLM
+```
+scripts/train-tlm-on-multi30k.sh
+```
+- VTLM
+```
+scripts/train-vtlm-on-multi30k.sh
+```
+
+4. Fine-tuning VTLM (code path: `data/`)
+```
+$ cd data
+scripts/finetune-mmt-multi30k-over-vtlm.sh
+```
+
+5. decoding (code path: `data/`)
+```
+scripts/decode-mmt-multi30k.sh
+```
+
+6. probing (code path: `data/`)
+```
+scripts/probes-vtlm.sh
+```
+
+
+### Reference
+[VTLM] (https://github.com/ImperialNLP/VTLM)
